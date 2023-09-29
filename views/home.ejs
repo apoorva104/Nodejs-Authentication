@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+
+    <title>Home Page</title>
+    <!-- Add your CSS links and stylesheets here -->
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to the Home Page</h1>
+    </header>
+    <!-- <div id="signout"> <a href="/signout">signout</a> </div> -->
+    <button onclick="window.location.href = '/signout'">
+        Sign Out
+    </button>
+    <nav>
+        <!-- Add navigation links here -->
+    </nav>
+    <main>
+        <section>
+            <h2>Hello, <%= userName %>!</h2>
+            <!-- Display a personalized message using the user's name -->
+            <p>This is your personalized home page. You can add content specific to the user here.</p>
+        </section>
+        <!-- Add more sections and content as needed -->
+    </main>
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+
+</html>

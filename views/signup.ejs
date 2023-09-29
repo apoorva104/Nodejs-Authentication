@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+
+<body>
+  <header>
+    <button id="btn" onclick="window.location.href = '/signin'">
+      Sign In
+    </button>
+    <h1>Sign Up</h1>
+    <button onclick="window.location.href = '/reset-password'">
+      Reset Password
+    </button>
+
+  </header>
+  <!-- Display error messages, if any -->
+
+  <form action="/signup" method="POST">
+    <div>
+      <label for="username">
+        <h3>Username:</h3>
+      </label>
+      <input style="background-color:#F9E79F " type="text" id="username" name="username" required><br>
+    </div><br>
+    <div>
+      <label for="email">
+        <h3>Email:</h3>
+      </label>
+      <input style="background-color:#F9E79F " type="email" id="email" name="email" required><br>
+    </div><br>
+    <div>
+      <label for="password">
+        <h3>Password:</h3>
+      </label>
+      <input style="background-color:#F9E79F " type="password" id="password" name="password" required><br>
+    </div><br>
+    <div>
+      <label for="confirmPassword">
+        <h3>Confirm Password:</h3>
+      </label>
+      <input style="background-color:#F9E79F " type="password" id="confirmPassword" name="confirmPassword" required><br>
+    </div><br>
+    <div class="g-recaptcha" data-sitekey="6Le7zkYoAAAAADzupy3us7D5pMVsSnYnmrp-_crV">
+    </div><br>
+    <div>
+      <button type="submit">Sign Up</button> <br>
+    </div>
+  </form>
+
+ 
+  <script>
+        <% if (flash.success && flash.success.length > 0) {%>
+      new Noty({
+        theme: 'relax',
+        text: "<%= flash.success %>",
+        type: 'success',
+        layout: 'topRight',
+        timeout: 1500
+
+      }).show();    
+        <%} %>
+
+        <% if (flash.error && flash.error.length > 0) {%>
+      new Noty({
+        theme: 'relax',
+        text: "<%= flash.error %>",
+        type: 'error',
+        layout: 'topRight',
+        timeout: 1500
+
+      }).show();    
+        <%} %>
+  </script>
+</body>
+
+</html>
