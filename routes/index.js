@@ -11,6 +11,9 @@ const signinController = require('../controllers/signinController');
 const resetPasswordController = require('../controllers/resetPasswordController');
 const signoutController = require('../controllers/signoutController');
 // Sign-up route
+router.get('/', function(req, res) {
+  res.redirect('/signup');
+ });
 router.get('/signup', (req, res) => {
   //console.log("dfgh")
 
